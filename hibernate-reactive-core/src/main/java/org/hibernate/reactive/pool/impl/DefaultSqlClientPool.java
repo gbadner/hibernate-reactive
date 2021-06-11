@@ -74,7 +74,7 @@ public class DefaultSqlClientPool extends SqlClientPool
 	private Pool pools;
 	private SqlStatementLogger sqlStatementLogger;
 	private URI uri;
-	private ServiceRegistryImplementor serviceRegistry;
+	private ServiceRegistryImplementor serviceRegistry  ;
 
 	//Asynchronous shutdown promise: we can't return it from #close as we implement a
 	//blocking interface.

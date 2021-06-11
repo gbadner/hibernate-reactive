@@ -340,7 +340,7 @@ public class ReactiveMultitenantNoResolverTest extends BaseReactiveTest {
 	@AfterClass
 	public static void dropDatabases(TestContext context) {
 		if ( factoryManager.isStarted() ) {
-			test( context, getSessionFactory()
+			test( context, staticSessionFactory()
 					.withSession( DEFAULT.name(), session -> Arrays
 							.stream( values() )
 							.filter( tenant -> tenant != DEFAULT )

@@ -32,7 +32,7 @@ import static org.hibernate.internal.util.config.ConfigurationHelper.getString;
  */
 public class DefaultSqlClientPoolConfiguration implements SqlClientPoolConfiguration, Configurable {
 
-    private static final int DEFAULT_POOL_SIZE = 5;
+    private static final int DEFAULT_POOL_SIZE = 10;
 
     private int poolSize;
     private Integer maxWaitQueueSize;

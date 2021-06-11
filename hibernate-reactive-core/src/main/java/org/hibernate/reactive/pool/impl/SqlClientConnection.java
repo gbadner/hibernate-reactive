@@ -111,6 +111,11 @@ public class SqlClientConnection implements ReactiveConnection {
 	}
 
 	@Override
+	public CompletionStage<ResultSet> selectJdbcOutsideTransaction(String sql) {
+		return preparedQueryOutsideTransaction( sql ).thenApply(ResultSetAdaptor::new);
+	}
+
+	@Override
 	public CompletionStage<Void> execute(String sql) {
 		return preparedQuery( sql ).thenApply( ignore -> null );
 	}

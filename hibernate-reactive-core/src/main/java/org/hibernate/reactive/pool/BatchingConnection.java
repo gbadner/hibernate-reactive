@@ -156,6 +156,11 @@ public class BatchingConnection implements ReactiveConnection {
                 delegate.selectJdbc(sql, paramValues);
     }
 
+    @Override
+    public CompletionStage<ResultSet> selectJdbcOutsideTransaction(String sql) {
+        return delegate.selectJdbcOutsideTransaction( sql );
+    }
+
     public CompletionStage<Long> selectIdentifier(String sql, Object[] paramValues) {
         // Do not want to execute the batch here
         // because we want to be able to select
